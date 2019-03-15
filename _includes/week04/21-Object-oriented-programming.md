@@ -1,12 +1,12 @@
-# 8. Object-oriented programming
-## 8.1 Introduction
+## 8. Object-oriented programming
+### 8.1 Introduction
 Before we begin, here is a small introduction to object-oriented programming.
 
 In procedural programming - which is the way of programming we have been studying so far - a program is divided in to smaller parts, methods. A method works as a separate part of a program and it can be called from anywhere in the program. When a method is called, execution of the program moves to the beginning of the called method. After the execution of the method is done, the program will continue from where the method was called.
 
 In object oriented programming, just like in procedural programming, we attempt to divide a program into smaller parts. In object-oriented programming the small parts are objects. Each separate object has its own individual responsibility; an object contains a related group of information and functionality. Object-oriented programs consist of multiple objects which together define how the program works.
 
-## 8.1.1 Object
+#### 8.1.1 Object
 
 We have already used many of the ready-made objects in Java. For example, ArrayLists are objects. Each separate list consists of information related to it; that is, the state of the object. Functionality is also contained in the ArrayList objects: the methods by which the state of the object can be altered. As an example, there are two ArrayList objects in the following piece of code, cities and countries :
 
@@ -44,7 +44,7 @@ String anotherText = new String("more text");
 
 Cases in which ready-made parts of Java call `new` out of sight of the programmer also exist.
 
-### 8.1.2 Class
+#### 8.1.2 Class
 
 It is clear that all objects are not similar to one another. For example, `ArrayList` objects differ drastically from `String` objects. All `ArrayLists` have the same methods `add`, `contains`, `remove`, `size`, ... and respectively all String objects have the same methods (`substring`, `length`, `charAt`, ...). `Arraylist` and `String` objects do not have the same methods because they are different types of objects.
 
@@ -52,7 +52,7 @@ The type of a certain group of objects is called a **class**. `ArrayList` is a c
 
 Objects of the same class all have the same methods and a similar state. For example, the state of an `ArrayList` object consists of elements inserted to the list while the state of a `String` object consists of a string of characters.
 
-## 8.2 A class and its objects
+### 8.2 A class and its objects
 
 A **class defines** what kind of objects it has:
 
@@ -79,7 +79,7 @@ Constructors take parameters the way any other method does.
 {% include week04/exercise/003.md %}
 {: .exercises }
 
-### 8.2.1 Defining your own class - object variables
+#### 8.2.1 Defining your own class - object variables
 
 A class is defined to serve some meaningful whole. Often a "meaningful whole" represents something from the real world. If a computer program needs to handle personal data it could be sensible to define a separate class Person which then holds methods and attributes related to an individual.
 
@@ -121,7 +121,7 @@ Variables defined within a class are called object *attributes*, *object fields*
 
 So, we have defined the schematics -- the class -- for the person object. All person objects have the variables `name` and `age`. The 'state' of the objects is determined by the values that have been set to its variables.
 
-### 8.2.2 Defining your own class - constructor, or "formatting the state"
+#### 8.2.2 Defining your own class - constructor, or "formatting the state"
 
 When an object is created its starting state is defined at the same time. Self-defined objects are created for the most part in the same way as ready-made objects (`ArrayList` objects for example) are created. Objects are created with the `new` command. When creating an object it would be handy to be able to set the values of some of the variables of that object.
 
