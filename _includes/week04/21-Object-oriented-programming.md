@@ -121,7 +121,7 @@ Variables defined within a class are called object *attributes*, *object fields*
 
 So, we have defined the schematics -- the class -- for the person object. All person objects have the variables `name` and `age`. The 'state' of the objects is determined by the values that have been set to its variables.
 
-#### 8.2.2 Defining your own class - constructor, or "formatting the state"
+#### 8.2.2 Defining your own class - constructor
 
 When an object is created its starting state is defined at the same time. Self-defined objects are created for the most part in the same way as ready-made objects (`ArrayList` objects for example) are created. Objects are created with the `new` command. When creating an object it would be handy to be able to set the values of some of the variables of that object.
 
@@ -152,7 +152,7 @@ A few notes: within the constructor there is a command `this.age = 0`. Through i
 
 One more thing: if the programmer does not create a constructor for her class, Java will automatically create a default constructor for it. A default constructor is a constructor that does nothing. So, if you for some reason do not need a constructor you do not need to write one.
 
-### 21.6 Class definition - methods
+#### 8.2.3 Defining your own class - methods
 
 We already know how to create and initialize objects. However, objects are useless if they cannot do anything. Therefore, objects should have methods. Let us add to the Person class a method that prints the object on the screen:
 
@@ -204,7 +204,7 @@ Martin, age 0 years
 {% include week04/exercise/004.md %}
 {: .exercises }
 
-### 21.7 More methods
+##### 8.2.3.1 More methods
 
 Let us create a method that can be used to increase the age of a person by one:
 
@@ -305,7 +305,7 @@ Pekka and Andrew total of 3 years old
 {% include week04/exercise/007.md %}
 {: .exercises }
 
-### 21.8 The Person class grows
+##### 8.2.3.2 The Person class grows
 
 Let us get back to work on the `Person` class. The current version of the class looks like this:
 
@@ -445,7 +445,7 @@ andy is a minor
 bob is an adult
 ```
 
-### 21.9 toString
+##### 8.2.3.3 The 'toString()' method
 
 We have been guilty of bad programming style; we have created a method that prints an object, `printPerson`. The recommended way of doing this is by defining a method that returns a "character string representation" of the object. In Java, a method returning a `String` representation is called `toString`. Let us define this method for person:
 
@@ -500,7 +500,7 @@ What happens is that the object is asked for its string representation. The stri
 {% include week04/exercise/008.md %}
 {: .exercises }
 
-### 21.10 More methods
+### 8.3 Even more methods
 
 Let us continue with the class `Person`. We would be interested in knowing the [body mass index](http://en.wikipedia.org/wiki/Body_mass_index) of a person. To calculate the index, we need to know the height and weight of the person. We add for both height and weight object variables and methods that can be used to assign the variables a value. When this is in place, we add a method that calculates the body mass index.
 
@@ -564,7 +564,7 @@ Matti, body mass index: on 26.54320987654321
 John, body mass index: on 20.897959183673468
 ```
 
-### 21.11 Object variable and parameter with identical name
+#### 8.3.1 Object variable and method parameter with identical name
 
 Above, the method setHeight assigns the object variable height the value of the parameter `newHeight`:
 
@@ -592,7 +592,7 @@ public void setHeight(int height) {
 }
 ```
 
-### 21.12 Contolling the number of decimals when printing a float
+#### 8.3.2 Contolling the number of decimals when printing a float
 
 The number of decimals in the last output was far too high, two decimals would be enough. One technique to control how a float number is printed is to use the command `String.format`.
 
@@ -617,7 +617,7 @@ The method `String.format` is not the most flexible way provided by Java for for
 {% include week04/exercise/009.md %}
 {: .exercises }
 
-## Important notes regarding the use of objects. You should definately read these.
+## Important notes regarding the use of objects.
 
 Object-oriented programming is mostly about turning concepts into their own entities, or in other words forming abstractions. One might think that it is pointless to create an object that only holds one number in it, and that the same could be achieved with simple `int` variables. This is not the case. If a clock consists of just 3 int variables that are then increased, the program loses some human readability. It becomes more difficult to "see" what the program is about. Earlier in the material we mentioned the advice of the renown programmer Kent Beck: *"Any fool can write code that a computer can understand. Good programmers write code that humans can understand"*, since the hand of a clock is its own clearly definable concept, it is a good idea to create it an own class - `BoundedCounter` - for the sake of human readability.
 
@@ -627,7 +627,7 @@ We established that a clock contains three hands, it consists of three concepts.
 
 Now, we will take some careful first steps in the object world. Towards the end of the course, objects will start to come to you naturally and the idea of programs being built out of small, well defined, co-operating pieces - which at this point might feel incomprehensible - will become something you will take for granted.
 
-### 21.13 Calling other methods within an object
+#### 8.3.3 Calling other methods within an object
 
 Objects can also call its own methods. Let us assume we would like to include body mass index in the string representation of the person objects. Instead of calculating the body mass index in the toString method, a better idea is to call the method `bodyMassIndex` from the `toString` method:
 
