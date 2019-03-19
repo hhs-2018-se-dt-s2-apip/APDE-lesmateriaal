@@ -8,7 +8,7 @@ In object oriented programming, just like in procedural programming, we attempt 
 
 #### 8.1.1 Object
 
-We have already used many of the ready-made objects in Java. For example, ArrayLists are objects. Each separate list consists of information related to it; that is, the state of the object. Functionality is also contained in the ArrayList objects: the methods by which the state of the object can be altered. As an example, here are two ArrayList objects in the following piece of code, `cities` and `countries` :
+We have already used many of the ready-made objects in Java. For example, ArrayLists are objects. Each separate list consists of information related to it; that is, the state of the object. Functionality is also contained in the ArrayList objects: the methods by which the state of the object can be altered. As an example, here are two ArrayList objects in the following piece of code, `cities` and `countries`:
 
 ```java
 public static void main(String[] args) {
@@ -498,7 +498,7 @@ What happens is that the object is asked for its string representation. The stri
 {% include week04/exercise/008.md %}
 {: .exercises }
 
-### 8.3 Even more methods
+### 8.3 More about methods
 
 Let us continue with the class `Person`. We would be interested in knowing the [body mass index](http://en.wikipedia.org/wiki/Body_mass_index) of a person. To calculate the index, we need to know the height and weight of the person. We add for both height and weight object variables and methods that can be used to assign the variables a value. When this is in place, we add a method that calculates the body mass index.
 
@@ -625,7 +625,7 @@ We established that a clock contains three hands, it consists of three concepts.
 
 For now, we will take some careful first steps in the object oriented world. Towards the end of the course, objects will start to come to you naturally and the idea of programs being built out of small, well defined, co-operating pieces - which at this point might feel incomprehensible - will become something you will take for granted.
 
-#### 8.3.3 Calling other methods within an object
+#### 8.3.3 Calling other methods from within an object
 
 Objects can also call its own methods. Let us assume we would like to include body mass index in the string representation of the person objects. Instead of calculating the body mass index in the toString method, a better idea is to call the method `bodyMassIndex` from the `toString` method:
 
