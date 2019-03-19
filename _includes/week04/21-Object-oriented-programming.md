@@ -1,6 +1,6 @@
 ## 8. Object-oriented programming
 ### 8.1 Introduction
-Before we begin, here is a small introduction to object-oriented programming.
+Let us begin with a small introduction to object-oriented programming.
 
 In procedural programming - which is the way of programming we have been studying so far - a program is divided in to smaller parts, methods. A method works as a separate part of a program and it can be called from anywhere in the program. When a method is called, execution of the program moves to the beginning of the called method. After the execution of the method is done, the program will continue from where the method was called.
 
@@ -8,7 +8,7 @@ In object oriented programming, just like in procedural programming, we attempt 
 
 #### 8.1.1 Object
 
-We have already used many of the ready-made objects in Java. For example, ArrayLists are objects. Each separate list consists of information related to it; that is, the state of the object. Functionality is also contained in the ArrayList objects: the methods by which the state of the object can be altered. As an example, there are two ArrayList objects in the following piece of code, cities and countries :
+We have already used many of the ready-made objects in Java. For example, ArrayLists are objects. Each separate list consists of information related to it; that is, the state of the object. Functionality is also contained in the ArrayList objects: the methods by which the state of the object can be altered. As an example, here are two ArrayList objects in the following piece of code, `cities` and `countries` :
 
 ```java
 public static void main(String[] args) {
@@ -29,24 +29,22 @@ public static void main(String[] args) {
 }
 ```
 
-Both the `countries` object and the `cities` object live a life of their own. The state of each is not related to the state of the other. For example, the state of the `countries` object consists of the Strings "Finland", "Germany" and "Netherlands" that are in the list, probably also the information of how many countries are in the list.
+Both the `countries` object and the `cities` object live a life of their own. The state of one is not related to the state of the other. For example, the state of the `countries` object consists of the Strings "Finland", "Germany" and "Netherlands" that are in the list, probably also the information of how many countries are in the list.
 
-When doing a method call related to an object (for example, `countries.add("Finland");`), the name of the object whose method is being called goes to the left side of the period sign (dot), and to the right side goes the name of the method itself. When asking how many Strings the `countries` list contains, we call `countries.size()`. We are calling the method size of the object countries. What the method returns depends on the state of the object in question, other objects do not affect the execution of the method in any way.
+When doing a method call related to an object (for example, `countries.add("Finland");`), the name of the object whose method is being called is stated on the left side of the period sign (dot) and the name of the method itself is stated on the right side. When asking how many Strings the `countries` list contains, we call `countries.size()`. We are calling the method `size()` of the object `countries`. What is returned depends on the state of the object in question, other objects do not affect the execution of the method in any way.
 
-We have used the command `new` many times already. For example, creation of a list (`ArrayList`) and creation of a reader (`Scanner`) have been done using the command `new`. The reason is that both of these are *classes* from which the object is created. In Java, objects are always created with `new`, except in a few cases.
+We have used the command `new` many times already. For example, creation of a list (`ArrayList`) and creation of a reader (`Scanner`) have been done using the command `new`. The reason is that both of these are *classes* from which the object is created. In Java, objects are created with `new`.
 
-One of the cases where you do not always need to use `new` is in the construction of Strings. The familiar way to create a String is actually an abbreviated way of using `new`. A String can also be created with new just like any other object:
+One exception seems to be the construction of Strings. The familiar way to create a String is actually an abbreviated way of using `new`. A String can also be created with new just like any other object:
 
 ```java
 String text = "some text";       // abbreviated way of creating a String
 String anotherText = new String("more text");
 ```
 
-Cases in which ready-made parts of Java call `new` out of sight of the programmer also exist.
-
 #### 8.1.2 Class
 
-It is clear that all objects are not similar to one another. For example, `ArrayList` objects differ drastically from `String` objects. All `ArrayLists` have the same methods `add`, `contains`, `remove`, `size`, ... and respectively all String objects have the same methods (`substring`, `length`, `charAt`, ...). `Arraylist` and `String` objects do not have the same methods because they are different types of objects.
+It is clear that all objects are not similar to one another. For example, `ArrayList` objects differ drastically from `String` objects. All `ArrayList` objects have the same methods `add`, `contains`, `remove`, `size`, ... and respectively all `String` objects have the same methods (`substring`, `length`, `charAt`, ...). `Arraylist` and `String` objects do not have the same methods because they are different types of objects.
 
 The type of a certain group of objects is called a **class**. `ArrayList` is a class, as are `String`, `Scanner`, and so forth. Objects, on the other hand, are *instances* of classes.
 
@@ -57,7 +55,7 @@ Objects of the same class all have the same methods and a similar state. For exa
 A **class defines** what kind of objects it has:
 
 - **what methods the objects have**
-- **what the state of the objects are, or in other words, what kind of attributes the objects have**
+- **what the state of the objects is, or in other words, what kind of attributes the objects have**
 
 A class describes the "blueprint" of the objects that are made out of it (are instances of it).
 
@@ -106,7 +104,7 @@ public class Person {
 }
 ```
 
-The class has to define what methods and attributes the objects created from the class will have. Let us decide that each person has a name and an age. It feels natural to represent the name as a String and the age as an integer. Let us add this to our schematics:
+The class should define what methods and attributes its objects will have. Let us decide that each person has a name and an age. It feels natural to represent the name as a String and the age as an integer. Let us add this to our class:
 
 ```java
 public class Person {
@@ -119,7 +117,7 @@ Above, we defined that all instances created from the `Person` class have a name
 
 Variables defined within a class are called object *attributes*, *object fields* or *object variables*. A beloved child has many names.
 
-So, we have defined the schematics -- the class -- for the person object. All person objects have the variables `name` and `age`. The 'state' of the objects is determined by the values that have been set to its variables.
+So, we have defined the blueprint -- the class -- for the person object. All person objects have the variables `name` and `age`. The 'state' of the objects is determined by the values that have been set to its variables.
 
 #### 8.2.2 Defining your own class - constructor
 
@@ -140,17 +138,17 @@ public class Person {
     private int age;
 
     public Person(String initialName) {
-        this.age = 0;
         this.name = initialName;
+        this.age = 0;
     }
 }
 ```
 
 The constructor always has the same name as the class. In the code above, the class is `Person` and the constructor is `public Person(String initialName)`. The value the constructor receives as a parameter is in parentheses after the name of the constructor. You can imagine the constructor as a method that Java runs when an object is created with the command `new Person("Bob");` Whenever an object is created from a class, the constructor of that class is called.
 
-A few notes: within the constructor there is a command `this.age = 0`. Through it, we set a value for this particular object; we define the internal variable age of "this" object. Another command we use is `this.name = initialName;`. Again, we give the internal variable called name the String that is defined in the constructor. The variables `age` and `name` are automatically visible in the constructor and elsewhere in the object. They are referred to with the this prefix. Due to the `private` modifier, the variables cannot be seen from outside the object.
+A few notes: within the constructor there is a command `this.age = 0`. By using the keyword `this`, we can refer to this particular object; we define the internal variable age of *this* object (the object currently being constructed). Another command we use is `this.name = initialName;`. Again, we give the internal variable called name the String that is defined in the constructor. The variables `age` and `name` are automatically visible in the constructor and elsewhere in the object. They are referred to with the `this` prefix. Due to the `private` modifier, the variables cannot be seen from outside the object.
 
-One more thing: if the programmer does not create a constructor for her class, Java will automatically create a default constructor for it. A default constructor is a constructor that does nothing. So, if you for some reason do not need a constructor you do not need to write one.
+One more thing: (if and only) if the programmer does not create a constructor for her class, Java will automatically create a default constructor for it. A default constructor is a constructor that does nothing. So, if you for some reason do not need a constructor you do not need to write one.
 
 #### 8.2.3 Defining your own class - methods
 
@@ -172,9 +170,9 @@ public class Person {
 }
 ```
 
-As seen above, the method is written within the class. The method name is prefixed with `public void` since it is assumed that users of the object should be capable of using the method and the method should not return anything. With objects the keyword `static` is not used in method definitions. Next week, we will clarify the reason behind that.
+As seen above, the method is written within the class. The method name is prefixed with `public void` since it is assumed that users of the object should be capable of using the method (`public`) and the method should not return anything (`void`). With objects the keyword `static` is not used in method definitions. Next week, we will clarify the reason behind that.
 
-Inside the method `printPerson`, there is a single line of code that uses the object variables `name` and `age`. The prefix `this` is used to emphasize that we are referring to the name and age of *this* object. All the object variables are visible from all the methods of the object.
+Inside the method `printPerson`, there is a single line of code that uses the object variables `name` and `age`. The prefix `this` is used to emphasize that we are referring to the name and age of *this* object. All the object variables are visible from within all the methods of the object.
 
 Let us create three persons and ask them to print themselves:
 
@@ -574,7 +572,7 @@ public void setHeight(int newHeight) {
 }
 ```
 
-The parameter could also be named identically with the object variable:
+The parameter could also be named identically to the object variable:
 
 ```java
 public void setHeight(int height) {
@@ -619,13 +617,13 @@ The method `String.format` is not the most flexible way provided by Java for for
 
 ## Important notes regarding the use of objects.
 
-Object-oriented programming is mostly about turning concepts into their own entities, or in other words forming abstractions. One might think that it is pointless to create an object that only holds one number in it, and that the same could be achieved with simple `int` variables. This is not the case. If a clock consists of just 3 int variables that are then increased, the program loses some human readability. It becomes more difficult to "see" what the program is about. Earlier in the material we mentioned the advice of the renown programmer Kent Beck: *"Any fool can write code that a computer can understand. Good programmers write code that humans can understand"*, since the hand of a clock is its own clearly definable concept, it is a good idea to create it an own class - `BoundedCounter` - for the sake of human readability.
+Object-oriented programming is mostly about turning concepts into their own entities, or in other words forming abstractions. One might think that it is pointless to create an object that only holds one number in it, and that the same could be achieved with simple `int` variables. This is not the case. If a clock consists of just 3 int variables that are then increased, the program loses some human readability. It becomes more difficult to "see" what the program is about. Earlier in the material we mentioned the advice of the renowned programmer Kent Beck: *"Any fool can write code that a computer can understand. Good programmers write code that humans can understand"*, since the hand of a clock is its own clearly definable concept, it is a good idea to create it an own class - `BoundedCounter` - for the sake of human readability.
 
 Turning a concept into a class of its own is a good idea for a lot of reasons. Firstly, some details (i.e. when the counter makes a full round) can be hidden inside the class (*abstracted*). Instead of writing an if-clause and an assignment operation, it is enough that the user of the counter calls the descriptively named method `next()`. In addition to clocks, the created counter might be good for being used as a building block for other projects too, so a class made from a clear concept can be very versatile. Another huge advantage we gain by writing code this way, is that when the details of the mechanics are hidden, they can be changed if need be.
 
 We established that a clock contains three hands, it consists of three concepts. Actually the clock itself is a concept too and next week we will make the class Clock. Then, we can create distinct Clock objects. Clock will be an object which functionality is based on "simpler" objects, the hands. This is the grand idea of object-oriented programming: a program is built out of small, clearly defined co-operating objects.
 
-Now, we will take some careful first steps in the object world. Towards the end of the course, objects will start to come to you naturally and the idea of programs being built out of small, well defined, co-operating pieces - which at this point might feel incomprehensible - will become something you will take for granted.
+For now, we will take some careful first steps in the object oriented world. Towards the end of the course, objects will start to come to you naturally and the idea of programs being built out of small, well defined, co-operating pieces - which at this point might feel incomprehensible - will become something you will take for granted.
 
 #### 8.3.3 Calling other methods within an object
 
@@ -637,7 +635,7 @@ public String toString() {
 }
 ```
 
-As can be seen, an object can call its own method by prefixing the method name with `this` and dot. The this is not necessary, so also the following works:
+As can be seen, an object can call its own method by prefixing the method name with `this` and dot. The this is not necessary, and also the following would work:
 
 ```java
 public String toString() {
