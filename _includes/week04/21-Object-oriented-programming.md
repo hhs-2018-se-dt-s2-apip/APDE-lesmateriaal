@@ -74,7 +74,7 @@ Scanner reader = new Scanner(System.in);
 Constructors take parameters the way any other method does.
 ```
 
-{% include week04/exercise/003.md %}
+{% include week04/exercise/004.md %}
 {: .exercises }
 
 #### 8.2.1 Defining your own class - object variables
