@@ -190,3 +190,6 @@ The method `reportMaturity` is defined as static so it doesn't belong to any obj
 
 {% include week06/exercise/008.md %}
 {: .exercises }
+
+{% include week07/exercise/004.md %}
+{: .exercises }
