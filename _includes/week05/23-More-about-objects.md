@@ -1,4 +1,6 @@
-## 23.1 Multiple constructors
+### 8.4 More about objects and classes
+
+#### 8.4.1 Multiple constructors
 
 Let us return to the class that handles Persons again. The class `Person` currently looks like this:
 
@@ -113,7 +115,7 @@ Esko, age 0 years
 
 The technique in which a class has two constructors is called *constructor overloading*. A class can have multiple constructors, which are different from one another according to parameter quanitities and/or types. However, it is not possible to create two different constructors that have exactly the same type of parameters. We cannot add a constructor `public Person(String name, int weight)` on top of the old ones, since it is impossible for Java to tell the difference between this one and the one in which the integer stands for the age.
 
-### 23.2 Calling your own constructor
+#### 8.4.2 Calling your own constructor
 
 But wait, in chapter 21 we noted that "copy-paste" code is not too great of an idea! When we inspect the overloaded constructors above, we notice that they have the same code repeated in them. We are not ok with *this*.
 
@@ -136,7 +138,7 @@ public Person(String name, int age) {
 
 Calling the own constructor of a class `this(name, 0);` might seem a little peculiar. But we can imagine that during the call it will automatically copy-paste the code from the constructor below and that 0 is entered to the age parameter.
 
-### 23.3 Overloading a method
+#### 8.4.3 Overloading a method
 
 Just like constructors, methods can also be overloaded and multiple versions of a method can exist. Again, the parameter types of different versions have to be different. Let us create another version of the `becomeOlder`, which enables aging the person the amount of years that is entered as a parameter:
 
@@ -187,7 +189,7 @@ public void becomeOlder(int years) {
 {% include week05/exercise/001.md %}
 {: .exercises }
 
-### 23.4 Object is at the end of a wire
+#### 8.4.4 Object is at the end of a wire
 
 In chapter 20, we noted that `ArrayList` is at the end of a wire. Also objects are 'at the end of a wire'. What does this mean? Let us inspect the following example:
 
@@ -321,7 +323,7 @@ Java Result: 1~~
 
 Not good. This might be the first time in your life that you see the text **NullPointerException**. But we can assure you that it will not be the last. NullPointerException is an exception state, when we try to call methods of an object with the value `null`.
 
-### 23.5 An object as a method parameter
+#### 8.4.5 An object as a method parameter
 
 We have seen that a method can have, for example `int`, `double`, `String` or `ArrayList` as its parameter. ArrayLists and character strings are objects, so as one might guess a method can take any type of object as a parameter. Let us demonstrate this with an example.
 
@@ -395,7 +397,7 @@ Juhana is not accepted as a member
 {% include week05/exercise/003.md %}
 {: .exercises }
 
-### 23.6 Another object of the same type as a parameter to a method
+#### 8.4.6 Another object of the same type as a parameter to a method
 
 We will keep on working with the `Person` class. As we recall, persons know their age:
 
@@ -467,7 +469,7 @@ public class Person {
 
 Even though age is a private object variable, we can read the value of the variable by writing compared.age. This is because `private` variables can be read in all methods that the class in question contains. Note that the syntax resembles the call of a method of an object. Unlike calling a method, we refer to a field of an object, in which case we do not write the parentheses.
 
-### 23.7 The date as an object
+#### 8.4.7 The date as an object
 
 Another example of the same theme. Let us create a class, which can represent dates.
 
@@ -543,7 +545,7 @@ public static void main(String[] args) {
 {% include week05/exercise/004.md %}
 {: .exercises }
 
-### 23.8 Objects on a list
+#### 8.4.8 Objects on a list
 
 We've used `ArrayLists` in a lot of examples and assignments already. You can add character strings, for example, to an `ArrayList` object and going through the strings, searching, removing and sorting them and so forth, are painless actions.
 
@@ -594,7 +596,7 @@ Martin, age 30 years
 {% include week05/exercise/005.md %}
 {: .exercises }
 
-### 23.9 An object within an object
+#### 8.4.9 An object within an object
 
 Objects can have objects within them, not only character strings but also self-defined objects. Let's get back to the `Person`-class again and add a birthday for the person. We can use the `MyDate`-object we created earlier here:
 
@@ -672,7 +674,7 @@ When age is removed, the `olderThan` method has to be changed so that it compare
 {% include week05/exercise/006.md %}
 {: .exercises }
 
-### 23.10 A list of objects within an object
+#### 8.4.10 A list of objects within an object
 
 Let's expand the `WeightWatchersAssociation` object so that the association records all its members into an `ArrayList` object. So in this case the list will be filled with `Person` objects. In the extended version the association is given a name as a constructor parameter:
 
@@ -771,7 +773,7 @@ The members of weight watchers association 'kumpulan paino':
 {: .exercises }
 
 
-### 23.11 Method returns an object
+#### 8.4.11 Method returns an object
 
 We've seen methods that return booleans, numbers, lists and strings. It's easy to guess that a method can return any type of an object. Let's make a method for the weight watchers association that returns the person with the highest weight index.
 
@@ -821,7 +823,7 @@ member with the greatest weight index: Petri
 weight index 37,42
 ```
 
-### 23.12 Method returns an object it creates
+#### 8.4.12 Method returns an object it creates
 
 In the last example a method returned one Person object that the WeightWatcers object had in it. It's also possible that a method returns an entirely new object. In the following is a simple counter that has a method `clone` with which a clone - an entirely new counter object - can be made from the counter, which at creation has the same value as the counter that is being cloned:
 
@@ -889,7 +891,7 @@ The value of the object being cloned and the value of the clone - after the clon
 {% include week05/exercise/008.md %}
 {: .exercises }
 
-## 23.13 More assignments
+#### 8.4.13 More assignments
 
 All the new theory for this week has already been covered. However, since this week's topics are quite challenging, we will practise our routine with a couple of more exercises.
 

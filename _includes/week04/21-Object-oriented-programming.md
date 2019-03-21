@@ -1,4 +1,4 @@
-## 8. Object-oriented programming
+## 8 Object-oriented programming
 ### 8.1 Introduction
 Let us begin with a small introduction to object-oriented programming.
 

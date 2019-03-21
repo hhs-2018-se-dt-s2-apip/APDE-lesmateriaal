@@ -1,4 +1,4 @@
-## 6.4. To static or not to static?
+### 8.5 To static or not to static?
 
 When we started using objects, the material advised to leave out the keyword 'static' when defining their methods. However, up until week 3 all of the methods included that keyword. So what is it all about?
 
@@ -65,7 +65,7 @@ public class ArrayHandling {
 
 The static method that has been defined within another class will now be called with `ArrayHandling.resetArray(parameter);`.
 
-## 6.4.1 When static methods should be used
+#### 8.5.1 When static methods should be used
 
 All object state-handling methods should be defined as normal object methods. For example, all of the methods of the `Person`, `MyDate`, `Clock`, `Team`, ... classes we defined during the previous weeks should be defined as normal object methods, not as statics.
 
