@@ -1,4 +1,4 @@
-## 14. Overwriting Methods & Polymorphism
+### 9.3. Overwriting Methods & Polymorphism
 
 Let's take the example of shapes. There are a number of different geometrical shapes. In this example we're focussing on the `Rectangle` and `Circle`. These shapes both have a color, a `Rectangle` has a `width` and `height`, but a `Circle` only has a radius. We can summarize this in the following diagram. With these shapes, we would like to be able to calculate the surface area and circumference.
 
@@ -62,7 +62,7 @@ Shape circle = new Circle(Color.red, 10);
 System.out.println(circle.getArea()); // won't work
 ```
 
-### 14.1 Polymorphism
+#### 9.3.1 Polymorphism
 
 This is a problem, as we would like to be able to use the generic superclass as a variable type too, like with interfaces. To fix this, we can add the `getArea()` and `getCircumference()` methods in the `Shape` class, and **overwrite** this method in the *subclass*es. To overwrite a file, the method needs to have the same header, meaning the return type and parameters must be the same. In this case, we choose to use a `double` returntype for the methods, so they are all the same
 
@@ -184,7 +184,7 @@ A
 B
 ```
 
-### 14.2 Overrides
+#### 9.3.2 Overrides
 
 As mentioned before, when overriding a method, java matches the overriding of a method by the return value and parameters of the method. However if the method changes in the superclass, it must also be changed in the subclass. This is **not** done automatically, and can be forgotten by the programmer. This is why in the subclass, we can add an 'annotation', a small marker, to indicate this method is overriding another method. Then, if the method changes in the superclass, and is accidentally not changed in the subclass, the java compiler will give an error. This annotating can be done with the `@Overrides` keyword, in front of the method
 

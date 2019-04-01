@@ -1,4 +1,4 @@
-## 16. Abstract class
+### 9.4. Abstract class
 
 In Exercise 10.3 there's a problem though. It is possible to execute the following code
 

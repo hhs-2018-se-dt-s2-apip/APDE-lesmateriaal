@@ -1,4 +1,4 @@
-## 17. Casting
+### 9.5 Casting
 
 We've seen casting before, where we had a double, but wanted to store it in a integer variable. We can also cast objects. In our previous example of the animals, a `Cow` is also an `Animal`, so we can store it, but not all `Animal`s are `Cow`s, so we can't store it that way. Let's look at an example
 

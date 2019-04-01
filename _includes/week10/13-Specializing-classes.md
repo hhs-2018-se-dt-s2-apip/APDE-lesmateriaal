@@ -1,4 +1,4 @@
-## 13. Extending Classes
+## 9. Extending Classes
 
 In java it's possible to extend classes to add functionality. By extending a class, you take over all the attributes, methods and constructors of the other class. By reusing the class in the other class, you only have to write this code once, and can reuse it in other classes, as if it were part of that class. An example could be classes about animals.
 
@@ -100,7 +100,7 @@ chirp!!!!
 The bird is flying
 ```
 
-### 13.1 Superclass
+### 9.1 Superclass
 
 The class that is being extended, is called the `superclass`. The class that is extending, is called the `subclass`
 
@@ -115,7 +115,7 @@ In the example of the animals,
 
 In java, the superclass can be used by using the `super` keyword. With `super`, we can call the constructor of the superclass, or call a method in a superclass. Methods can also be called using the `this` keyword. 
 
-### 13.2 Constructors in the superclass
+### 9.2 Constructors in the superclass
 
 If a superclass has a constructor with parameters, and no constructor without parameters, the superclass's constructor **must** be called using `super(...)` in the constructor of the **subclass**.
 
